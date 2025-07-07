@@ -1,10 +1,14 @@
 // Green Phase
 
 /*
-
 function countVowels(str) {
-    return (str.match(/[aeiou]/gi) || []).length;
-}; 
+    const vowels = 'aeiouAEIOU';
+    let count = 0;
+    for (let char of str) {
+        if (vowels.includes(char)) count++;
+    }
+    return count;
+}
 
 */
 
@@ -14,14 +18,8 @@ function countVowels(str) {
 
 function countVowels(str) {
     if (typeof str !== 'string') return 0;
-    const vowels = 'aeiouAEIOU';
-    let count = 0;
-    for (let char of str) {
-        if (vowels.includes(char)) count++;
-    }
-    return count;
-}
-
+    return (str.match(/[aeiou]/gi) || []).length;
+};
 
 module.exports = {
     countVowels,
